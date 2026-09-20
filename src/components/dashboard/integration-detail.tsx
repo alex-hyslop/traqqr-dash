@@ -26,7 +26,7 @@ export function IntegrationDetail({
   ctaMode?: "dark" | "amber";
 }) {
   return (
-    <main className="relative flex w-full flex-col px-16 py-6">
+    <main className="relative flex w-full flex-col overflow-x-hidden px-4 py-6 md:px-16">
       <div
         aria-hidden
         className="pointer-events-none absolute left-px top-[85px] h-[811px] w-[1200px] blur-[150px]"
@@ -68,22 +68,22 @@ export function IntegrationDetail({
         <p className="font-mono-space text-sm leading-5 text-muted-foreground">{subtitle}</p>
       </div>
 
-      <div className="relative flex items-stretch gap-6 pt-[52px]">
-        <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-[14px] border border-border bg-[rgba(3,7,18,0.5)] px-4 py-16">
+      <div className="relative flex flex-col items-stretch gap-6 pt-8 md:flex-row md:pt-[52px]">
+        <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-[14px] border border-border bg-[rgba(3,7,18,0.5)] px-4 py-12 md:py-16">
           <p className="text-xl font-semibold leading-[30px] text-foreground">
             {emptyStateHeading}
           </p>
-          <p className="w-[500px] text-center text-sm leading-6 text-muted-foreground">
+          <p className="w-full max-w-[500px] text-center text-sm leading-6 text-muted-foreground">
             {emptyStateDescription}
           </p>
           <AdvanceButton label={ctaLabel} mode={ctaMode} />
         </div>
 
-        <div className="flex flex-1 flex-col items-center justify-center gap-3 rounded-[14px] border border-border bg-[rgba(16,27,39,0.5)] py-8">
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 rounded-[14px] border border-border bg-[rgba(16,27,39,0.5)] px-4 py-8">
           <p className="text-xl font-semibold leading-[30px] text-foreground">
             Need help connecting {name}?
           </p>
-          <p className="w-[420px] text-center text-sm leading-6 text-muted-foreground">
+          <p className="w-full max-w-[420px] text-center text-sm leading-6 text-muted-foreground">
             Follow the setup guide for this integration, or reach out to support if you get stuck
             along the way.
           </p>

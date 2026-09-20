@@ -18,7 +18,7 @@ export default function SitesPage() {
   const [open, setOpen] = useState(false);
 
   return (
-    <main className="relative flex w-full flex-col gap-8 px-6 pb-6 pt-9">
+    <main className="relative flex w-full flex-col gap-8 overflow-x-hidden px-4 pb-6 pt-6 md:px-6 md:pt-9">
       <div
         aria-hidden
         className="pointer-events-none absolute left-px top-[25px] h-[811px] w-[1200px] blur-[150px]"
@@ -28,7 +28,7 @@ export default function SitesPage() {
         }}
       />
 
-      <div className="relative flex flex-col gap-1.5 px-8">
+      <div className="relative flex flex-col gap-1.5 md:px-8">
         <h1 className="text-3xl font-medium leading-9 tracking-[-1px] text-foreground">Sites</h1>
         <p className="text-xs leading-4 text-muted-foreground">
           Manage your tracking sites and their configuration.
@@ -40,14 +40,14 @@ export default function SitesPage() {
           <Image src="/icons/sites-globe.svg" alt="" width={35} height={34} />
         </span>
         <p className="text-lg font-semibold text-foreground">No sites yet</p>
-        <p className="w-[360px] text-center text-sm text-muted-foreground">
+        <p className="w-full max-w-[360px] text-center text-sm text-muted-foreground">
           Create your first site to start tracking events and conversions.
         </p>
         <AdvanceButton label="Create your first site" mode="amber" onClick={() => setOpen(true)} />
       </div>
 
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent className="gap-6 p-8 sm:max-w-[460px]">
+        <SheetContent className="w-full gap-6 p-6 sm:max-w-[460px] md:p-8">
           <SheetHeader className="gap-2 p-0">
             <SheetTitle className="text-xl font-semibold text-foreground">Create Site</SheetTitle>
           </SheetHeader>

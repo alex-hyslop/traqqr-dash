@@ -1,11 +1,24 @@
 import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 
-export function TopBar() {
+export function TopBar({ onMenuClick }: { onMenuClick?: () => void }) {
   return (
     <header className="flex items-center justify-between border-b border-border bg-background px-4 py-3">
-      <div className="w-[193px]">
+      <div className="flex items-center gap-3 md:hidden">
+        <button
+          type="button"
+          aria-label="Open menu"
+          onClick={onMenuClick}
+          className="flex cursor-pointer items-center rounded-lg p-2 text-muted-foreground transition-colors hover:bg-[#f3f4f6]/80 active:bg-[#f3f4f6]"
+        >
+          <Menu size={20} />
+        </button>
+        <Image src="/icons/logo.svg" alt="Traqqr.ai" width={105} height={28} />
+      </div>
+
+      <div className="hidden w-[193px] md:block">
         <div className="relative">
           <Image
             src="/icons/search.svg"

@@ -4,7 +4,7 @@ import { INTEGRATIONS } from "@/lib/integrations";
 
 export default function IntegrationsPage() {
   return (
-    <main className="relative flex w-full flex-col gap-8 px-6 pb-6 pt-9">
+    <main className="relative flex w-full flex-col gap-6 px-4 pb-6 pt-6 md:gap-8 md:px-6 md:pt-9">
       <div
         aria-hidden
         className="pointer-events-none absolute left-px top-[25px] h-[811px] w-[1200px] blur-[150px]"
@@ -14,7 +14,7 @@ export default function IntegrationsPage() {
         }}
       />
 
-      <div className="relative flex items-center justify-between px-8">
+      <div className="relative flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:px-8">
         <div className="flex flex-col gap-1.5">
           <h1 className="text-3xl font-medium leading-9 tracking-[-1px] text-foreground">
             Integrations
@@ -24,25 +24,25 @@ export default function IntegrationsPage() {
           </p>
         </div>
 
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-start gap-2 md:items-end">
           <p className="text-xs leading-[18px] text-muted-foreground">Filter Status</p>
-          <Tabs defaultValue="all">
-            <TabsList className="h-auto gap-0 rounded-lg bg-muted p-[3px]">
+          <Tabs defaultValue="all" className="w-full md:w-auto">
+            <TabsList className="h-auto w-full gap-0 rounded-lg bg-muted p-[3px] md:w-auto">
               <TabsTrigger
                 value="all"
-                className="cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
+                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
               >
                 All
               </TabsTrigger>
               <TabsTrigger
                 value="connected"
-                className="cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
+                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
               >
                 Connected
               </TabsTrigger>
               <TabsTrigger
                 value="not-connected"
-                className="cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
+                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
               >
                 Not Connected
               </TabsTrigger>

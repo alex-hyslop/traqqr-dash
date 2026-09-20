@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { NAV_ITEMS } from "@/lib/nav";
 
-export function Sidebar() {
+function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-screen w-[216px] shrink-0 flex-col border-r border-[rgba(255,255,255,0.06)] bg-[#0f1117]">
+    <div className="flex h-full flex-col bg-[#0f1117]">
       <div className="flex items-center border-b border-[rgba(255,255,255,0.06)] px-[22px] py-5">
         <Image src="/icons/logo.svg" alt="Traqqr.ai" width={164} height={44} priority />
       </div>
@@ -51,6 +51,7 @@ export function Sidebar() {
             <Link
               key={item.label}
               href={item.href}
+              onClick={onNavigate}
               className={`${baseClassName} cursor-pointer transition-colors ${
                 isActive ? "" : "hover:bg-white/5"
               }`}
@@ -80,6 +81,16 @@ export function Sidebar() {
           <Image src="/icons/chevron-down.svg" alt="" width={14} height={14} />
         </div>
       </div>
+    </div>
+  );
+}
+
+export function Sidebar() {
+  return (
+    <aside className="hidden h-screen w-[216px] shrink-0 border-r border-[rgba(255,255,255,0.06)] md:flex">
+      <SidebarContent />
     </aside>
   );
 }
+
+export { SidebarContent };
