@@ -30,19 +30,19 @@ export default function IntegrationsPage() {
             <TabsList className="h-auto gap-0 rounded-lg bg-muted p-[3px]">
               <TabsTrigger
                 value="all"
-                className="rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
+                className="cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
               >
                 All
               </TabsTrigger>
               <TabsTrigger
                 value="connected"
-                className="rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
+                className="cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
               >
                 Connected
               </TabsTrigger>
               <TabsTrigger
                 value="not-connected"
-                className="rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
+                className="cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809]"
               >
                 Not Connected
               </TabsTrigger>
