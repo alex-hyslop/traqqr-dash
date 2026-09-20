@@ -16,6 +16,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/facebook.svg",
     status: "No pixels",
     statusColor: "amber",
+    href: "/integrations/facebook",
   },
   {
     name: "Cloudflare",
