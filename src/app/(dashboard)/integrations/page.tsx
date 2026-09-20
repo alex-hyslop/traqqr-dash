@@ -1,8 +1,22 @@
+"use client";
+
+import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IntegrationCard } from "@/components/dashboard/integration-card";
 import { INTEGRATIONS } from "@/lib/integrations";
 
+type Filter = "all" | "connected" | "not-connected";
+
 export default function IntegrationsPage() {
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const visibleIntegrations = INTEGRATIONS.filter((integration) => {
+    const isConnected = integration.statusColor === "green";
+    if (filter === "connected") return isConnected;
+    if (filter === "not-connected") return !isConnected;
+    return true;
+  });
+
   return (
     <main className="relative flex w-full flex-col gap-6 px-4 pb-6 pt-6 md:gap-8 md:px-6 md:pt-9">
       <div
@@ -26,23 +40,27 @@ export default function IntegrationsPage() {
 
         <div className="flex flex-col items-start gap-2 md:items-end">
           <p className="text-xs leading-[18px] text-muted-foreground">Filter Status</p>
-          <Tabs defaultValue="all" className="w-full md:w-auto">
+          <Tabs
+            value={filter}
+            onValueChange={(value) => setFilter(value as Filter)}
+            className="w-full md:w-auto"
+          >
             <TabsList className="h-auto w-full gap-0 rounded-lg bg-muted p-[3px] md:w-auto">
               <TabsTrigger
                 value="all"
-                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
+                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground transition-colors hover:text-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
               >
                 All
               </TabsTrigger>
               <TabsTrigger
                 value="connected"
-                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
+                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground transition-colors hover:text-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
               >
                 Connected
               </TabsTrigger>
               <TabsTrigger
                 value="not-connected"
-                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
+                className="flex-1 cursor-pointer rounded-md px-3 py-1.5 font-mono-space text-xs text-muted-foreground transition-colors hover:text-foreground data-active:bg-foreground data-active:text-[#080809] md:flex-none"
               >
                 Not Connected
               </TabsTrigger>
@@ -52,7 +70,7 @@ export default function IntegrationsPage() {
       </div>
 
       <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {INTEGRATIONS.map((integration) => (
+        {visibleIntegrations.map((integration) => (
           <IntegrationCard key={integration.name} {...integration} />
         ))}
       </div>
