@@ -14,7 +14,7 @@ export function IntegrationCard({ name, description, icon, status, statusColor }
   return (
     <button
       type="button"
-      className="flex h-[182px] w-full flex-col gap-4 rounded-[14px] border border-border bg-card p-5 text-left transition-colors hover:border-[rgba(255,255,255,0.16)]"
+      className="flex h-[182px] w-full flex-col gap-4 rounded-[14px] border border-border bg-card p-5 text-left transition-[background-color,border-color,box-shadow] hover:border-[rgba(255,255,255,0.18)] hover:bg-[rgba(255,255,255,0.06)] hover:shadow-[0px_6px_20px_0px_rgba(0,0,0,0.35)] active:border-[rgba(255,255,255,0.14)] active:bg-[rgba(0,0,0,0.18)] active:shadow-none"
     >
       <div className="flex w-full items-center justify-between">
         <div

@@ -19,10 +19,14 @@ export function TopBar() {
       </div>
 
       <div className="flex items-center gap-3">
-        <div className="relative flex items-center rounded-lg p-2">
-          <Image src="/icons/bell.svg" alt="Notifications" width={16} height={16} />
+        <button
+          type="button"
+          aria-label="Notifications"
+          className="relative flex items-center rounded-lg p-2 transition-colors hover:bg-[#f3f4f6]/80 active:bg-[#f3f4f6]"
+        >
+          <Image src="/icons/bell.svg" alt="" width={16} height={16} />
           <span className="absolute right-2 top-[5px] size-2 rounded-full border border-background bg-destructive" />
-        </div>
+        </button>
         <Avatar className="size-8">
           <AvatarImage src="/avatars/user-08.png" alt="Tim. G" />
           <AvatarFallback>TG</AvatarFallback>
