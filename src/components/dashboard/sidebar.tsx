@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { NAV_ITEMS } from "@/lib/nav";
 
-export function Sidebar({ activeHref }: { activeHref: string }) {
+export function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="flex h-screen w-[216px] shrink-0 flex-col border-r border-[rgba(255,255,255,0.06)] bg-[#0f1117]">
       <div className="flex items-center border-b border-[rgba(255,255,255,0.06)] px-[22px] py-5">
@@ -12,7 +17,7 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
 
       <nav className="flex flex-1 flex-col gap-[2px] overflow-y-auto px-3 py-4">
         {NAV_ITEMS.map((item) => {
-          const isActive = item.href === activeHref;
+          const isActive = !!item.href && pathname.startsWith(item.href);
           const content = (
             <>
               {isActive && (
@@ -38,16 +43,22 @@ export function Sidebar({ activeHref }: { activeHref: string }) {
             </>
           );
 
-          const className = `relative flex h-[41px] items-center gap-[13px] rounded-[10px] px-[13px] py-[9px] ${
+          const baseClassName = `relative flex h-[41px] items-center gap-[13px] rounded-[10px] px-[13px] py-[9px] ${
             isActive ? "bg-white/8" : ""
           }`;
 
           return item.href ? (
-            <Link key={item.label} href={item.href} className={className}>
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`${baseClassName} cursor-pointer transition-colors ${
+                isActive ? "" : "hover:bg-white/5"
+              }`}
+            >
               {content}
             </Link>
           ) : (
-            <div key={item.label} className={`${className} cursor-default`}>
+            <div key={item.label} className={`${baseClassName} cursor-default`}>
               {content}
             </div>
           );

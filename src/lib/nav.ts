@@ -7,7 +7,7 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Welcome", icon: "/icons/nav-welcome.svg" },
   { label: "Dashboard", icon: "/icons/nav-dashboard.svg" },
-  { label: "Sites", icon: "/icons/nav-sites.svg" },
+  { label: "Sites", icon: "/icons/nav-sites.svg", href: "/sites" },
   { label: "Snippets", icon: "/icons/nav-snippets.svg" },
   { label: "Integrations", icon: "/icons/nav-integrations.svg", href: "/integrations" },
   { label: "Reverse Proxy", icon: "/icons/nav-reverse-proxy.svg" },
