@@ -15,7 +15,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <Image src="/icons/logo.svg" alt="Traqqr.ai" width={164} height={44} priority />
       </div>
 
-      <nav className="flex flex-1 flex-col gap-[2px] overflow-y-auto px-3 py-4">
+      <nav className="flex flex-1 flex-col gap-[2px] overflow-y-auto overscroll-contain touch-pan-y px-3 py-4">
         {NAV_ITEMS.map((item) => {
           const isActive = !!item.href && pathname.startsWith(item.href);
           const Icon = item.icon;

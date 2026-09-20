@@ -46,7 +46,7 @@ export default function SitesPage() {
         onClose={() => setOpen(false)}
         side="right"
         widthClassName="w-full sm:w-[460px]"
-        panelClassName="overflow-y-auto bg-popover p-6 md:p-8"
+        panelClassName="overflow-y-auto overscroll-contain touch-pan-y bg-popover p-6 md:p-8"
       >
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-between">

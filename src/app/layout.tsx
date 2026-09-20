@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Space_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { TouchGuard } from "@/components/touch-guard";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`dark ${manrope.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="h-full overflow-hidden bg-background text-foreground">
+        <TouchGuard />
         <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
