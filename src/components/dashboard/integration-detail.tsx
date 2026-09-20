@@ -13,6 +13,7 @@ export function IntegrationDetail({
   emptyStateHeading,
   emptyStateDescription,
   ctaLabel,
+  ctaMode = "dark",
 }: {
   icon: string;
   name: string;
@@ -22,6 +23,7 @@ export function IntegrationDetail({
   emptyStateHeading: string;
   emptyStateDescription: ReactNode;
   ctaLabel: string;
+  ctaMode?: "dark" | "amber";
 }) {
   return (
     <main className="relative flex w-full flex-col px-16 py-6">
@@ -74,7 +76,7 @@ export function IntegrationDetail({
           <p className="w-[500px] text-center text-sm leading-6 text-muted-foreground">
             {emptyStateDescription}
           </p>
-          <AdvanceButton label={ctaLabel} mode="dark" />
+          <AdvanceButton label={ctaLabel} mode={ctaMode} />
         </div>
 
         <div className="flex flex-1 flex-col items-center justify-center gap-3 rounded-[14px] border border-border bg-[rgba(16,27,39,0.5)] py-8">

@@ -27,6 +27,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/cloudflare.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/cloudflare",
   },
   {
     name: "Ablefy",
@@ -34,6 +35,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/ablefy.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/ablefy",
   },
   {
     name: "KlickTipp",
@@ -41,6 +43,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/klicktipp.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/klicktipp",
   },
   {
     name: "Digistore24",
@@ -48,6 +51,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/digistore24.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/digistore24",
   },
   {
     name: "Webinaris",
@@ -58,6 +62,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/webinaris.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/webinaris",
   },
   {
     name: "EverWebinar",
@@ -65,6 +70,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/everwebinar.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/everwebinar",
   },
   {
     name: "HubSpot",
@@ -72,6 +78,7 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/hubspot.svg",
     status: "Not connected",
     statusColor: "red",
+    href: "/integrations/hubspot",
   },
   {
     name: "Meta Ads",
@@ -79,5 +86,6 @@ export const INTEGRATIONS: Integration[] = [
     icon: "/brand/meta-ads.svg",
     status: "Open",
     statusColor: "green",
+    href: "/integrations/meta-ads",
   },
 ];
