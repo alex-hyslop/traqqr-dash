@@ -87,9 +87,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    overscroll-behavior: none;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+    overscroll-behavior: none;
   }
 }
 
