@@ -89,11 +89,19 @@
   }
   html {
     overscroll-behavior: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    overflow: hidden;
   }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
     overscroll-behavior: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    overflow: hidden;
   }
 }
 
