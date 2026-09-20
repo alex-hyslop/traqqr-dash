@@ -35,7 +35,7 @@ export default function SitesPage() {
         </p>
       </div>
 
-      <div className="relative flex flex-col items-center gap-5 pt-[90px]">
+      <div className="relative flex flex-col items-center gap-5 pt-[26px]">
         <span className="flex size-16 items-center justify-center rounded-full bg-white/[0.06]">
           <Image src="/icons/sites-globe.svg" alt="" width={35} height={34} />
         </span>

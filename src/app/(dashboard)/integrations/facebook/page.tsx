@@ -17,6 +17,7 @@ export default function FacebookDetailPage() {
         </>
       }
       ctaLabel="Connect Pixel"
+      ctaMode="amber"
     />
   );
 }

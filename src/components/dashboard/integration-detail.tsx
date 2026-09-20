@@ -44,7 +44,7 @@ export function IntegrationDetail({
         }}
       />
 
-      <nav className="relative flex items-center gap-2 pt-6 font-mono-space text-xs">
+      <nav className="relative flex items-center gap-2 font-mono-space text-xs leading-[18px]">
         <Link
           href="/integrations"
           className="cursor-pointer text-muted-foreground transition-colors hover:text-foreground"
@@ -55,7 +55,7 @@ export function IntegrationDetail({
         <span className="text-foreground">{name}</span>
       </nav>
 
-      <div className="relative flex flex-col gap-[18px] pt-[30px]">
+      <div className="relative flex flex-col gap-[18px] pt-[36px]">
         <div className="flex items-center gap-4">
           <Image src={icon} alt="" width={56} height={56} />
           <div className="flex items-center gap-[22px]">
@@ -68,7 +68,7 @@ export function IntegrationDetail({
         <p className="font-mono-space text-sm leading-5 text-muted-foreground">{subtitle}</p>
       </div>
 
-      <div className="relative flex flex-col items-stretch gap-6 pt-8 md:flex-row md:pt-[52px]">
+      <div className="relative flex flex-col items-stretch gap-6 pt-8 md:flex-row md:pt-[36px]">
         <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-[14px] border border-border bg-[rgba(3,7,18,0.5)] px-4 py-12 md:py-16">
           <p className="text-xl font-semibold leading-[30px] text-foreground">
             {emptyStateHeading}
