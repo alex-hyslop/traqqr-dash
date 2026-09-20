@@ -26,10 +26,10 @@ export function IntegrationDetail({
   ctaMode?: "dark" | "amber";
 }) {
   return (
-    <main className="relative flex w-full flex-col overflow-x-hidden px-4 py-6 md:px-16">
+    <main className="relative flex w-full flex-col px-4 py-6 md:px-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-px top-[85px] h-[811px] w-[1200px] blur-[150px]"
+        className="pointer-events-none absolute left-px top-[85px] h-[811px] w-full max-w-[1200px] blur-[150px]"
         style={{
           backgroundImage:
             "linear-gradient(227.83deg, rgba(56,189,248,0.1) 23.935%, rgba(255,171,64,0.42) 42.214%, rgb(3,7,18) 72.883%)",
@@ -37,7 +37,7 @@ export function IntegrationDetail({
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute left-px top-[85px] h-[811px] w-[1200px]"
+        className="pointer-events-none absolute left-px top-[85px] h-[811px] w-full max-w-[1200px]"
         style={{
           backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
           backgroundSize: "24px 24px",

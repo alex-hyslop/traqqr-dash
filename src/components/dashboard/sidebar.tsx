@@ -18,6 +18,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
       <nav className="flex flex-1 flex-col gap-[2px] overflow-y-auto px-3 py-4">
         {NAV_ITEMS.map((item) => {
           const isActive = !!item.href && pathname.startsWith(item.href);
+          const Icon = item.icon;
           const content = (
             <>
               {isActive && (
@@ -26,12 +27,10 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
                   className="absolute inset-0 rounded-[10px] border-t border-[rgba(255,255,255,0.14)] bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0.03)] via-40% to-transparent"
                 />
               )}
-              <Image
-                src={item.icon}
-                alt=""
+              <Icon
                 width={18}
                 height={18}
-                className="relative shrink-0"
+                className={`relative shrink-0 ${isActive ? "text-[#ffb74d]" : "text-[#90a1b9]"}`}
               />
               <span
                 className={`relative text-base leading-6 ${

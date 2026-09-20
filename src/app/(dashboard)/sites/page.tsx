@@ -18,10 +18,10 @@ export default function SitesPage() {
   const [open, setOpen] = useState(false);
 
   return (
-    <main className="relative flex w-full flex-col gap-8 overflow-x-hidden px-4 pb-6 pt-6 md:px-6 md:pt-9">
+    <main className="relative flex w-full flex-col gap-8 px-4 pb-6 pt-6 md:px-6 md:pt-9">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-px top-[25px] h-[811px] w-[1200px] blur-[150px]"
+        className="pointer-events-none absolute left-px top-[25px] h-[811px] w-full max-w-[1200px] blur-[150px]"
         style={{
           backgroundImage:
             "linear-gradient(227.83deg, rgba(56,189,248,0.1) 23.935%, rgba(255,171,64,0.42) 42.214%, rgb(3,7,18) 72.883%)",
