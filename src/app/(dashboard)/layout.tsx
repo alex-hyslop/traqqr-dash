@@ -22,7 +22,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
       <div className="flex h-screen flex-1 flex-col">
         <TopBar onMenuClick={() => setMobileNavOpen(true)} />
-        <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain touch-pan-y">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain">
           {children}
         </div>
       </div>
