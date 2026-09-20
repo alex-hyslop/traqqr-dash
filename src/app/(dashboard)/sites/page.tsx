@@ -1,18 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { X } from "lucide-react";
 import { useState } from "react";
 import { AdvanceButton } from "@/components/dashboard/advance-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { SlideOver } from "@/components/ui/slide-over";
 
 export default function SitesPage() {
   const [open, setOpen] = useState(false);
@@ -46,11 +41,25 @@ export default function SitesPage() {
         <AdvanceButton label="Create your first site" mode="amber" onClick={() => setOpen(true)} />
       </div>
 
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent className="w-full gap-6 p-6 sm:max-w-[460px] md:p-8">
-          <SheetHeader className="gap-2 p-0">
-            <SheetTitle className="text-xl font-semibold text-foreground">Create Site</SheetTitle>
-          </SheetHeader>
+      <SlideOver
+        open={open}
+        onClose={() => setOpen(false)}
+        side="right"
+        widthClassName="w-full sm:w-[460px]"
+        panelClassName="overflow-y-auto bg-popover p-6 md:p-8"
+      >
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center justify-between">
+            <p className="text-xl font-semibold text-foreground">Create Site</p>
+            <button
+              type="button"
+              aria-label="Close"
+              onClick={() => setOpen(false)}
+              className="cursor-pointer rounded-lg p-1 text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+            >
+              <X size={20} />
+            </button>
+          </div>
           <p className="text-sm leading-6 text-muted-foreground">
             Add a new site to start tracking events and conversions.
           </p>
@@ -77,11 +86,11 @@ export default function SitesPage() {
             </p>
           </div>
 
-          <SheetFooter className="mt-0 flex-row justify-end p-0">
+          <div className="flex justify-end">
             <AdvanceButton label="Create Site" mode="amber" onClick={() => setOpen(false)} />
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
+          </div>
+        </div>
+      </SlideOver>
     </main>
   );
 }
