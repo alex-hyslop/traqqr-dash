@@ -1,7 +1,22 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { AdvanceButton } from "@/components/dashboard/advance-button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 export default function SitesPage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <main className="relative flex w-full flex-col gap-8 px-6 pb-6 pt-9">
       <div
@@ -28,8 +43,45 @@ export default function SitesPage() {
         <p className="w-[360px] text-center text-sm text-muted-foreground">
           Create your first site to start tracking events and conversions.
         </p>
-        <AdvanceButton label="Create your first site" mode="amber" />
+        <AdvanceButton label="Create your first site" mode="amber" onClick={() => setOpen(true)} />
       </div>
+
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetContent className="gap-6 p-8 sm:max-w-[460px]">
+          <SheetHeader className="gap-2 p-0">
+            <SheetTitle className="text-xl font-semibold text-foreground">Create Site</SheetTitle>
+          </SheetHeader>
+          <p className="text-sm leading-6 text-muted-foreground">
+            Add a new site to start tracking events and conversions.
+          </p>
+
+          <div className="flex flex-col gap-1.5">
+            <Label htmlFor="site-name" className="text-sm text-muted-foreground">
+              Name
+            </Label>
+            <Input id="site-name" placeholder="My Website" className="h-9" />
+            <p className="text-xs text-muted-foreground">A friendly name for your site.</p>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <Label htmlFor="site-domains" className="text-sm text-muted-foreground">
+              Allowed Domains
+            </Label>
+            <Textarea
+              id="site-domains"
+              placeholder="example.com, www.example.com, localhost"
+              className="h-20 resize-none"
+            />
+            <p className="text-xs text-muted-foreground">
+              Comma-separated list of domains allowed to send events.
+            </p>
+          </div>
+
+          <SheetFooter className="mt-0 flex-row justify-end p-0">
+            <AdvanceButton label="Create Site" mode="amber" onClick={() => setOpen(false)} />
+          </SheetFooter>
+        </SheetContent>
+      </Sheet>
     </main>
   );
 }
