@@ -42,23 +42,16 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
             </>
           );
 
-          const baseClassName = `relative flex h-[41px] items-center gap-[13px] rounded-[10px] px-[13px] py-[9px] ${
-            isActive ? "bg-white/8" : ""
+          const baseClassName = `relative flex h-[41px] cursor-pointer items-center gap-[13px] rounded-[10px] px-[13px] py-[9px] transition-colors ${
+            isActive ? "bg-white/8" : "hover:bg-white/5"
           }`;
 
           return item.href ? (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={onNavigate}
-              className={`${baseClassName} cursor-pointer transition-colors ${
-                isActive ? "" : "hover:bg-white/5"
-              }`}
-            >
+            <Link key={item.label} href={item.href} onClick={onNavigate} className={baseClassName}>
               {content}
             </Link>
           ) : (
-            <div key={item.label} className={`${baseClassName} cursor-default`}>
+            <div key={item.label} className={baseClassName}>
               {content}
             </div>
           );
